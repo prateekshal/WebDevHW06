@@ -1,0 +1,16 @@
+[Unit]
+Description=Timesheets
+
+[Service]
+Type=simple
+User=hw06
+Group=hw06
+Restart=on-failure
+Environment=MIX_ENV=prod "PORT=5001"
+Environment=LANG=en_US.UTF-8
+
+WorkingDirectory=/home/hw06/WebDevHW06/hw06
+ExecStart=/bin/bash /home/hw06/WebDevHW06/hw06/start.sh
+
+[Install]
+WantedBy=multi-user.target
