@@ -10,8 +10,9 @@ defmodule Hw06Web.UserController do
   end
 
   def new(conn, _params) do
+    managers = Users.getmanagers()
     changeset = Users.change_user(%User{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, managers: managers)
   end
 
   def create(conn, %{"user" => user_params}) do

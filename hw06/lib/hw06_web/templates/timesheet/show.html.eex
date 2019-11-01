@@ -1,0 +1,98 @@
+<h1>Show Timesheet</h1>
+
+<ul>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @timesheet.date %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @timesheet.status %>
+  </li>
+
+  <li>
+    <strong>Jobid1:</strong>
+    <%= @timesheet.jobid1 %>
+  </li>
+
+  <li>
+    <strong>Hr1:</strong>
+    <%= @timesheet.hr1 %>
+  </li>
+
+  <li>
+    <strong>Jobid2:</strong>
+    <%= @timesheet.jobid2 %>
+  </li>
+
+  <li>
+    <strong>Hr2:</strong>
+    <%= @timesheet.hr2 %>
+  </li>
+
+  <li>
+    <strong>Jobid3:</strong>
+    <%= @timesheet.jobid3 %>
+  </li>
+
+  <li>
+    <strong>Hr3:</strong>
+    <%= @timesheet.hr3 %>
+  </li>
+
+  <li>
+    <strong>Jobid4:</strong>
+    <%= @timesheet.jobid4 %>
+  </li>
+
+  <li>
+    <strong>Hr4:</strong>
+    <%= @timesheet.hr4 %>
+  </li>
+
+  <li>
+    <strong>Jobid5:</strong>
+    <%= @timesheet.jobid5 %>
+  </li>
+
+  <li>
+    <strong>Hr5:</strong>
+    <%= @timesheet.hr5 %>
+  </li>
+
+  <li>
+    <strong>Jobid6:</strong>
+    <%= @timesheet.jobid6 %>
+  </li>
+
+  <li>
+    <strong>Hr6:</strong>
+    <%= @timesheet.hr6 %>
+  </li>
+
+  <li>
+    <strong>Jobid7:</strong>
+    <%= @timesheet.jobid7 %>
+  </li>
+
+  <li>
+    <strong>Hr7:</strong>
+    <%= @timesheet.hr7 %>
+  </li>
+
+  <li>
+    <strong>Jobid8:</strong>
+    <%= @timesheet.jobid8 %>
+  </li>
+
+  <li>
+    <strong>Hr8:</strong>
+    <%= @timesheet.hr8 %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, @timesheet) %></span>
+<span><%= link "Back", to: Routes.timesheet_path(@conn, :index) %></span>

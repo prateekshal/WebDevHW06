@@ -8,10 +8,18 @@ defmodule Hw06Web.SessionController do
     def create(conn, %{"email" => email, "password" => password}) do
       user = Hw06.Users.authenticate(email, password)
       if user do
-        conn
-        |> put_session(:user_id, user.id)
-        |> put_flash(:info, "Welcome back #{user.email}")
-        |> redirect(to: Routes.page_path(conn, :index))
+        ismanager = user.ismanager
+        if ismanager do
+          conn
+          |> put_session(:user_id, user.id)
+          |> put_flash(:info, "Welcome back manager #{user.email}")
+          |> redirect(to: Routes.page_path(conn, :index))
+        else
+          conn
+          |> put_session(:user_id, user.id)
+          |> put_flash(:info, "Welcome back #{user.email}")
+          |> redirect(to: Routes.page_path(conn, :index))
+        end
       else
         conn
         |> put_flash(:error, "Login failed.")

@@ -1,0 +1,106 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+  <%= label f, :date %>
+  <%= date_select f, :date %>
+  <%= error_tag f, :date %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid1, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid1 %>
+  </div>
+
+
+  <div class="form-group">
+  <%= label f, :hr1 %>
+  <%= number_input f, :hr1, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr1 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid2, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid2 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr2 %>
+  <%= number_input f, :hr2, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr2 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid3, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid3 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr3 %>
+  <%= number_input f, :hr3, step: "any", min: "0", max: "8"%>
+  <%= error_tag f, :hr3 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid4, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid4 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr4 %>
+  <%= number_input f, :hr4, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr4 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid5, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid5 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr5 %>
+  <%= number_input f, :hr5, step: "any", min: "0", max: "8"%>
+  <%= error_tag f, :hr5 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid6, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid6 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr6 %>
+  <%= number_input f, :hr6, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr6 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid7, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid7 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr7 %>
+  <%= number_input f, :hr7, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr7 %>
+  </div>
+
+  <div class="form-group">
+  <%= select f, :jobid8, @jobs, class: "form-control" %>
+  <%= error_tag f, :jobid8 %>
+  </div>
+
+  <div class="form-group">
+  <%= label f, :hr8 %>
+  <%= number_input f, :hr8, step: "any", min: "0", max: "8" %>
+  <%= error_tag f, :hr8 %>
+  </div>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

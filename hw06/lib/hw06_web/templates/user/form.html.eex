@@ -29,6 +29,13 @@
     <%= error_tag f, :password_confirmation %>
   </div>
 
+  <div class="form-group">
+    <%= radio_button f, :ismanager, true, checked: "checked" %>
+    <%= label f, :ismanager, "Manager?" %>
+    <%= radio_button f, :ismanager, false %>
+    <%= label f, :ismanager, "Not Manager?" %>
+  </div>
+
   <div>
     <%= submit "Save", class: "btn btn-primary" %>
   </div>

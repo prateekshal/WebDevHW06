@@ -21,6 +21,7 @@ defmodule Hw06Web.Router do
     resources "/users", UserController
     resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
     resources "/jobs", JobController
+    resources "/timesheets", TimesheetController
   end
 
   # Other scopes may use custom stacks.

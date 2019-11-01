@@ -115,4 +115,9 @@ defmodule Hw06.Users do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def getmanagers() do
+    query = from(t in Hw06.Users.User, where: t.ismanager == true, select: t.name )
+    Repo.all(query)
+  end
 end
