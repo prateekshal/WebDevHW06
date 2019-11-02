@@ -1,0 +1,21 @@
+upstream hw06_app {
+	server localhost:5001;
+}
+
+server {
+	listen 80;
+	listen [::]:80;
+	
+	server_name time1.plingashettar.website;
+
+	location / {
+		proxy_pass http://hw06_app;
+	}
+
+	location /socket {
+		proxy_pass http://hw06_app;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+	}
+}
