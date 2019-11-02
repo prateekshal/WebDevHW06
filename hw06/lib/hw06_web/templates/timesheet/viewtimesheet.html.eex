@@ -1,0 +1,60 @@
+<h1>Listing Timesheets</h1>
+
+<table table-striped>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Jobid1</th>
+      <th>Hr1</th>
+      <th>Jobid2</th>
+      <th>Hr2</th>
+      <th>Jobid3</th>
+      <th>Hr3</th>
+      <th>Jobid4</th>
+      <th>Hr4</th>
+      <th>Jobid5</th>
+      <th>Hr5</th>
+      <th>Jobid6</th>
+      <th>Hr6</th>
+      <th>Jobid7</th>
+      <th>Hr7</th>
+      <th>Jobid8</th>
+      <th>Hr8</th>
+      <th>Total</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for timesheet <- @timesheets do %>
+    <tr>
+      <td><%= timesheet.user_id%></td>
+      <td><%= timesheet.date %></td>
+      <td><%= timesheet.status %></td>
+      <td><%= timesheet.jobid1 %></td>
+      <td><%= timesheet.hr1 %></td>
+      <td><%= timesheet.jobid2 %></td>
+      <td><%= timesheet.hr2 %></td>
+      <td><%= timesheet.jobid3 %></td>
+      <td><%= timesheet.hr3 %></td>
+      <td><%= timesheet.jobid4 %></td>
+      <td><%= timesheet.hr4 %></td>
+      <td><%= timesheet.jobid5 %></td>
+      <td><%= timesheet.hr5 %></td>
+      <td><%= timesheet.jobid6 %></td>
+      <td><%= timesheet.hr6 %></td>
+      <td><%= timesheet.jobid7 %></td>
+      <td><%= timesheet.hr7 %></td>
+      <td><%= timesheet.jobid8 %></td>
+      <td><%= timesheet.hr8 %></td>
+      <td><%= timesheet.total %></td>
+        <td>
+            <span><%= link "Approve", to: Routes.timesheet_path(@conn, :update, timesheet) %></span>
+            <span><%= link "Disapprove", to: Routes.timesheet_path(@conn, :update, timesheet)%></span>
+        </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

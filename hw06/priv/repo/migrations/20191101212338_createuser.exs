@@ -7,6 +7,7 @@ defmodule Hw06.Repo.Migrations.Createuser do
       add :name, :string, null: false
       add :password_hash, :string, default: "", null: false
       add :ismanager, :boolean, default: false, null: true
+      add :managerid, :integer, null: true
 
       timestamps()
     end

@@ -9,6 +9,7 @@ defmodule Hw06.Users.User do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
     field :ismanager, :boolean
+    field :managerid, :integer
 
     timestamps()
   end
@@ -16,7 +17,7 @@ defmodule Hw06.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :name, :password, :password_confirmation, :ismanager])
+    |> cast(attrs, [:email, :name, :password, :password_confirmation, :ismanager, :managerid])
     |> validate_confirmation(:password)
     |> validate_length(:password, min: 12) # too short
     |> hash_password()

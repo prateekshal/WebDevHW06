@@ -21,6 +21,8 @@
             <%= nav_link(@conn, "Home", Routes.page_path(@conn, :index)) %>
             <%= if @current_user do %>
               <%= if @current_user.ismanager do %>
+                <%= nav_link(@conn, "Timesheets",
+                  Routes.timesheet_path(@conn, :index)) %>
               <% else %>
                 <%= nav_link(@conn, "Timesheets",
                   Routes.timesheet_path(@conn, :index)) %>

@@ -21,6 +21,11 @@ defmodule Hw06.Users do
     Repo.all(User)
   end
 
+  def getmanagers() do
+    query = from(t in Hw06.Users.User, where: t.ismanager == true, select: t.name )
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single user.
 
@@ -116,8 +121,5 @@ defmodule Hw06.Users do
     User.changeset(user, %{})
   end
 
-  def getmanagers() do
-    query = from(t in Hw06.Users.User, where: t.ismanager == true, select: t.name )
-    Repo.all(query)
-  end
+
 end

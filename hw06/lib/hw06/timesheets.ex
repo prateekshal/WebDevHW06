@@ -42,6 +42,20 @@ defmodule Hw06.Timesheets do
       preload: [:user]
   end
 
+  def approve(id) do
+    
+  end
+
+  def getworkers(id) do
+    query = from(u in Hw06.Users.User, where: u.managerid == ^id, select: u.id)
+    Repo.all(query)
+  end
+
+  def get_timesheets(workers) do
+    query = from(t in Timesheet, where: t.user_id in ^workers, select: t)
+    Repo.all(query)
+  end
+
   @doc """
   Creates a timesheet.
 
